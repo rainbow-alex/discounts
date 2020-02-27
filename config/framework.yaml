@@ -1,0 +1,7 @@
+framework:
+    form:
+        enabled: false
+    session:
+        enabled: false
+    translator:
+        enabled: false

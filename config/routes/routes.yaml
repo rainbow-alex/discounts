@@ -1,0 +1,4 @@
+get-discounts:
+    methods: POST
+    path: /get-discounts
+    controller: Rainbow\Discounts\Controllers\DiscountsController::getDiscounts
