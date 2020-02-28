@@ -1,0 +1,12 @@
+<textarea>{}</textarea>
+<button>Test</button>
+<script>
+	document.getElementsByTagName("button")[0].addEventListener("click", function ()
+	{
+		const payload = document.getElementsByTagName("textarea")[0].value;
+		fetch("/get-discounts", {
+			method: "POST",
+			body: payload,
+		});
+	});
+</script>

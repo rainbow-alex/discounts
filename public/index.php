@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Rainbow\Discounts\Framework\AppKernel;
+use Rainbow\Discounts\Api\Framework\AppKernel;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
 

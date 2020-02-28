@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use Rainbow\Discounts\Framework\AppKernel;
+use Rainbow\Discounts\Api\Framework\AppKernel;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArgvInput;
 

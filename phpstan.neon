@@ -5,3 +5,5 @@ parameters:
 	level: max
 	paths:
 		- ./src
+	ignoreErrors:
+		- '{^Only booleans are allowed in .+}'

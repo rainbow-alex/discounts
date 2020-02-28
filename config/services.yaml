@@ -1,6 +1,37 @@
 services:
     _defaults:
         autowire: true
+        autoconfigure: true
 
-    Rainbow\Discounts\Controllers\:
-        resource: ../src/Controllers/*
+    #
+    # Domain layer
+    #
+
+    Rainbow\Discounts\DiscountService: ~
+
+    #
+    # Application layer
+    #
+
+    Rainbow\Discounts\Api\Controllers\:
+        resource: ../src/Api/Controllers/*
+        public: true
+
+    Rainbow\Discounts\Api\Framework\ExceptionListener: ~
+
+    Money\Currencies:
+        class: Money\Currencies\ISOCurrencies
+    Money\Parser\DecimalMoneyParser: ~
+    Money\Formatter\DecimalMoneyFormatter: ~
+
+    Rainbow\Discounts\Api\OrderParser: ~
+    Rainbow\Discounts\Api\OrderSerializer: ~
+
+    #
+    # Infrastructure layer
+    #
+
+    Rainbow\Discounts\ProductRepository:
+        class: Rainbow\Discounts\Infrastructure\JsonProductRepository
+        arguments:
+            - "%kernel.project_dir%/data/products.json"

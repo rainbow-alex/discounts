@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rainbow\Discounts\Framework;
+namespace Rainbow\Discounts\Api\Framework;
 
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
@@ -34,15 +34,15 @@ class AppKernel extends Kernel
 
 	protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader): void
 	{
-		$loader->load(__DIR__ . "/../../config/*.yaml", "glob");
-		$loader->load(__DIR__ . "/../../config/" . $this->environment . "/*.yaml", "glob");
+		$loader->load(__DIR__ . "/../../../config/*.yaml", "glob");
+		$loader->load(__DIR__ . "/../../../config/" . $this->environment . "/*.yaml", "glob");
 	}
 
 	protected function configureRoutes(RouteCollectionBuilder $routes): void
 	{
-		$routes->import(__DIR__ . "/../../config/routes/routes.yaml");
+		$routes->import(__DIR__ . "/../../../config/routes/routes.yaml");
 
-		$envRoutes = __DIR__ . "/../../config/routes/routes_" . $this->environment . ".yaml";
+		$envRoutes = __DIR__ . "/../../../config/routes/routes_" . $this->environment . ".yaml";
 		if (\file_exists($envRoutes))
 		{
 			$routes->import($envRoutes);

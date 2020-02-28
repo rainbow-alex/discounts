@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="vendor/autoload.php" verbose="true">
+	<php>
+		<!-- hide symfony logs in functional tests -->
+		<server name="SHELL_VERBOSITY" value="-1" />
+	</php>
 	<testsuites>
 		<testsuite name="All">
 			<directory>tests/</directory>

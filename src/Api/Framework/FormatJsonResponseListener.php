@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rainbow\Discounts\Framework;
+namespace Rainbow\Discounts\Api\Framework;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;

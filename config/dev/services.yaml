@@ -3,4 +3,4 @@ services:
         autowire: true
         autoconfigure: true
 
-    Rainbow\Discounts\Framework\FormatJsonResponseListener: ~
+    Rainbow\Discounts\Api\Framework\FormatJsonResponseListener: ~
