@@ -28,7 +28,7 @@ These are things I'd get answers to before starting, if blocking for this exerci
 ### Framework setup
 
 I set up a clean app with symfony framework.
-Disable those parts of the framework we don't use, especially `session` since we're making a stateless API.
+Disabled those parts of the framework we don't use, especially `session` since we're making a stateless API.
 
 Also installed and set up phpstan & phpunit.
 I skipped setting up a code style checker/fixer but that should definitely be included in a 'real' project.
@@ -51,6 +51,10 @@ Selectors are used to select which subset(s) of an order the rule applies to.
 Effects specify how to apply the discount on each subset of the order.
 The desired outcome was that each object has very little responsibility, can be tested individually, and reused.
 It did make the model more complex. Whether this is a good trade-off depends on the use case, but for this exercise I thought it would be fun to do :).
+
+### Infrastructure
+
+Since it doesn't make any difference for the domain code, I didn't bother writing realistic implementations for the repositories.
 
 ### Tests
 
