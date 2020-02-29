@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Rainbow\Discounts\Infrastructure;
 
-use Rainbow\Discounts\Product;
-use Rainbow\Discounts\ProductRepository;
+use Rainbow\Discounts\Domain\Product;
+use Rainbow\Discounts\Domain\ProductRepository;
 
 class JsonProductRepository implements ProductRepository
 {

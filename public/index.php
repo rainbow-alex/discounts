@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Rainbow\Discounts\Api\Framework\AppKernel;
+use Rainbow\Discounts\Application\Framework\DiscountsApiKernel;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -16,7 +16,7 @@ if ($debug)
 	Debug::enable();
 }
 
-$kernel = new AppKernel($env, $debug);
+$kernel = new DiscountsApiKernel($env, $debug);
 $kernel->boot();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);

@@ -7,31 +7,34 @@ services:
     # Domain layer
     #
 
-    Rainbow\Discounts\DiscountService: ~
+    Rainbow\Discounts\Domain\DiscountService: ~
 
     #
     # Application layer
     #
 
-    Rainbow\Discounts\Api\Controllers\:
-        resource: ../src/Api/Controllers/*
+    Rainbow\Discounts\Application\Controllers\:
+        resource: ../src/Application/Controllers/*
         public: true
 
-    Rainbow\Discounts\Api\Framework\ExceptionListener: ~
+    Rainbow\Discounts\Application\Framework\ExceptionListener: ~
 
     Money\Currencies:
         class: Money\Currencies\ISOCurrencies
     Money\Parser\DecimalMoneyParser: ~
     Money\Formatter\DecimalMoneyFormatter: ~
 
-    Rainbow\Discounts\Api\OrderParser: ~
-    Rainbow\Discounts\Api\OrderSerializer: ~
+    Rainbow\Discounts\Application\OrderParser: ~
+    Rainbow\Discounts\Application\OrderSerializer: ~
 
     #
     # Infrastructure layer
     #
 
-    Rainbow\Discounts\ProductRepository:
+    Rainbow\Discounts\Domain\ProductRepository:
         class: Rainbow\Discounts\Infrastructure\JsonProductRepository
         arguments:
             - "%kernel.project_dir%/data/products.json"
+
+    Rainbow\Discounts\Domain\DiscountRuleRepository:
+        class: Rainbow\Discounts\Infrastructure\HardcodedDiscountRuleRepository
