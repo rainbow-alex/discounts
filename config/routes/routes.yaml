@@ -1,4 +1,4 @@
-get-discounts:
+apply-discounts:
     methods: POST
-    path: /get-discounts
-    controller: Rainbow\Discounts\Application\Controllers\DiscountsController::getDiscounts
+    path: /apply-discounts
+    controller: Rainbow\Discounts\Application\Controllers\DiscountsController::applyDiscounts

@@ -6,7 +6,7 @@ Usage:
 
 	$ composer install
 	$ ./serve.sh
-	$ curl localhost:9000/get-discounts -X POST -d '{"id": "1", "customer-id": "1", "items": [], "total": "0.00"}'
+	$ curl localhost:9000/apply-discounts -X POST -d '{"id": "1", "customer-id": "1", "items": [], "total": "0.00"}'
 
 Running tests:
 
@@ -68,5 +68,5 @@ In this case the only implementations I wrote are stubby enough.
 * Harden parsing and error handling: add error codes, etc.
 * Write real implementations for repositories.
 * Add some logging, especially a warning when a product can't be found.
-* Test for rounding errors
+* Test for rounding errors.
 * ...

@@ -28,7 +28,7 @@ class DiscountsController
 		$this->orderSerializer = $orderSerializer;
 	}
 
-	public function getDiscounts(Request $request): JsonResponse
+	public function applyDiscounts(Request $request): JsonResponse
 	{
 		$payload = self::getJsonBody($request);
 		$order = $this->orderParser->parse($payload);
@@ -45,8 +45,8 @@ class DiscountsController
 	 */
 	private static function getJsonBody(Request $request)
 	{
-		/** @phpstan-var string $content */
 		$content = $request->getContent();
+		assert(\is_string($content));
 
 		try
 		{

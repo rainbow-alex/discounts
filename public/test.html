@@ -4,7 +4,7 @@
 	document.getElementsByTagName("button")[0].addEventListener("click", function ()
 	{
 		const payload = document.getElementsByTagName("textarea")[0].value;
-		fetch("/get-discounts", {
+		fetch("/apply-discounts", {
 			method: "POST",
 			body: payload,
 		});

@@ -29,6 +29,7 @@ class TotalQuantityIsAtLeastN implements OrderSubsetSelector
 		{
 			$totalQuantity += $item->getQuantity();
 		}
+
 		if ($totalQuantity >= $this->n)
 		{
 			return $subset;

@@ -20,7 +20,7 @@ class JsonProductRepository implements ProductRepository
 	{
 		$src = \file_get_contents($this->filename);
 		assert(\is_string($src));
-		$data = \json_decode($src, true);
+		$data = \json_decode($src, true, 512, \JSON_THROW_ON_ERROR);
 
 		foreach ($data as $productData)
 		{

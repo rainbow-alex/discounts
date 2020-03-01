@@ -30,13 +30,13 @@ class HardcodedDiscountRuleRepository implements DiscountRuleRepository
 			),
 			// For every product of category "Switches" (id 2), when you buy five, you get a sixth for free.
 			new DiscountRule(
-				1,
+				0,
 				new ProductCategoryIs("2"),
 				new EveryNUnits(6, new SingleUnitDiscount("1.0"))
 			),
 			// If you buy two or more products of category "Tools" (id 1), you get a 20% discount on the cheapest product.
 			new DiscountRule(
-				1,
+				0,
 				new TotalQuantityIsAtLeastN(2, new ProductCategoryIs("1")),
 				new OnCheapestItem(new SingleUnitDiscount("0.2"))
 			),

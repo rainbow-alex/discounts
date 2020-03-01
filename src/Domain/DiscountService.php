@@ -16,7 +16,9 @@ class DiscountService
 	public function applyDiscounts(Order $order): void
 	{
 		$discountRules = $this->ruleRepository->getAll();
-		usort($discountRules, fn (DiscountRule $a, DiscountRule $b) => -($a <=> $b));
+
+		// sort by priority
+		usort($discountRules, fn (DiscountRule $a, DiscountRule $b) => -($a->getPriority() <=> $b->getPriority()));
 
 		foreach ($discountRules as $rule)
 		{

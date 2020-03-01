@@ -8,7 +8,7 @@ use Rainbow\Discounts\Application\Framework\DiscountsApiKernel;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
-class GetDiscountsTest extends WebTestCase
+class ApplyDiscountsTest extends WebTestCase
 {
 	protected static function createKernel(array $options = [])
 	{
@@ -18,7 +18,7 @@ class GetDiscountsTest extends WebTestCase
 	public function testHappyPath(): void
 	{
 		$client = static::createClient();
-		$client->request("POST", "/get-discounts", [], [], [], <<<JSON
+		$client->request("POST", "/apply-discounts", [], [], [], <<<JSON
 			{
 				"id": "1",
 				"customer-id": "1",
@@ -45,7 +45,7 @@ class GetDiscountsTest extends WebTestCase
 	public function testInvalidJson(): void
 	{
 		$client = static::createClient();
-		$client->request("POST", "/get-discounts", [], [], [], "Invalid json");
+		$client->request("POST", "/apply-discounts", [], [], [], "Invalid json");
 
 		$response = $client->getResponse();
 		$this->assertEquals(400, $response->getStatusCode());
@@ -56,7 +56,7 @@ class GetDiscountsTest extends WebTestCase
 	public function testMissingFields(): void
 	{
 		$client = static::createClient();
-		$client->request("POST", "/get-discounts", [], [], [], <<<JSON
+		$client->request("POST", "/apply-discounts", [], [], [], <<<JSON
 			{
 				"customer-id": "1",
 				"items": [],
